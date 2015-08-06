@@ -1,8 +1,9 @@
 <?php 
 
+	echo $_GET['echostr'];
 	// echo 'NcuTech' 
 
-	// 定义Token
+/*	// 定义Token
 	define('TOKEN', 'ncutech');
 
 	// 验证函数
@@ -43,4 +44,6 @@
 
 
 	echo '验证失败！';
+*/
+
 ?>
