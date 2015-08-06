@@ -6,24 +6,3 @@
  * @version $Id$
  */
 
-// 定义Token
-define('TOKEN', 'ncutech');
-
-// 验证
-function checkSignature($signature, $timestamp, $nonce) {
-	// 获取数据
-	$token = TOKEN;
-
-	// 处理数据
-	$tmpArr = array($token, $timestamp, $nonce);
-	sort($tmpArr, SORT_STRING);
-	$tmpStr = implode($tmpArr);
-	$tmpStr = sha1($tmpStr);
-
-	// 处理返回
-	if ($tmpStr != $signature) {
-		return false;
-	}
-
-	return true;
-}
