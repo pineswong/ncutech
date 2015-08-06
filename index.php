@@ -30,6 +30,11 @@
 	$nonce = $_GET['nonce'];
 	$echostr = $_GET['echostr'];
 
+	echo $signature, '<br />';
+	echo $timestamp, '<br />';
+	echo $nonce, '<br />';
+	echo $echostr, '<br />';
+
 	// 验证Token
 	if (checkSignature()) {
 		echo $echostr;
