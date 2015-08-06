@@ -13,7 +13,10 @@
 
 	// 验证Token
 	if (checkSignature()) {
-		echo $echostr;	
+		echo $echostr;
+		echo '验证成功！';
 	}
 
+
+	echo '验证失败！';
 ?>
