@@ -1,9 +1,5 @@
 <?php 
-
-	echo $_GET['echostr'];
-	// echo 'NcuTech' 
-
-/*	// 定义Token
+	// 定义Token
 	define('TOKEN', 'ncutech');
 
 	// 验证函数
@@ -13,7 +9,7 @@
 
 		// 处理数据
 		$tmpArr = array($token, $timestamp, $nonce);
-		sort($tmpArr, SORT_STRING);
+		$tmpArr = sort($tmpArr, SORT_STRING);
 		$tmpStr = implode('', $tmpArr);
 		$tmpStr = sha1($tmpStr);
 
@@ -31,19 +27,9 @@
 	$nonce = $_GET['nonce'];
 	$echostr = $_GET['echostr'];
 
-	echo $signature, '<br />';
-	echo $timestamp, '<br />';
-	echo $nonce, '<br />';
-	echo $echostr, '<br />';
-
 	// 验证Token
-	if (checkSignature()) {
+	if (checkSignature($signature, $timestamp, $nonce)) {
 		echo $echostr;
-		echo '验证成功！';
 	}
-
-
-	echo '验证失败！';
-*/
 
 ?>
