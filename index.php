@@ -18,7 +18,7 @@
 	$echostr = $_GET['echostr'];
 
 	echo $signature;
-
+/*
 	// 处理数据
 	$tmpArr = array($token, $timestamp, $nonce);
 	$tmpArr = sort($tmpArr, SORT_STRING);
@@ -32,4 +32,4 @@
 	// 处理返回
 	if ($tmpStr == $signature) {
 		echo $echostr;
-	}
+	}*/
