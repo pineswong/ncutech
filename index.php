@@ -6,10 +6,8 @@
  * @version $Id$
  */
 
-	// 定义Token
-	define('TOKEN', 'ncutech');
-
-	$token = TOKEN;
+	// 引入函数
+	require './checkSignature.php';
 
 	// 获取数据
 	$signature = $_GET['signature'];
@@ -17,19 +15,7 @@
 	$nonce = $_GET['nonce'];
 	$echostr = $_GET['echostr'];
 
-
-	// 处理数据
-	$tmpArr = array($token, $timestamp, $nonce);
-	sort($tmpArr, SORT_STRING);
-	// print_r($tmpArr);
-	$tmpStr = implode($tmpArr);
-	$tmpStr = sha1($tmpStr);
-
-	// echo $tmpStr;
-	// echo '<br />';
-	// echo $signature;
-
-	// 处理返回
-	if ($tmpStr == $signature) {
+	// 验证Token
+	if (checkSignature($signature, $timestamp, $nonce)) {
 		echo $echostr;
 	}
