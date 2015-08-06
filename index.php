@@ -7,7 +7,7 @@
  */
 
 	// 引入函数
-	require './checkSignature';
+	require './checkSignature.php';
 
 	// 获取数据
 	$signature = $_GET['signature'];
