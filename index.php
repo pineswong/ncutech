@@ -15,6 +15,8 @@
 	$nonce = $_GET['nonce'];
 	$echostr = $_GET['echostr'];
 
+	echo $echostr;
+
 	// 验证Token
 	if (checkSignature($signature, $timestamp, $nonce)) {
 		echo $echostr;
