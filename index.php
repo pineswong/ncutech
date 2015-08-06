@@ -23,6 +23,10 @@
 	$tmpStr = implode('', $tmpArr);
 	$tmpStr = sha1($tmpStr);
 
+	echo $tmpStr;
+	echo '<br />'
+	echo $signature;
+
 	// 处理返回
 	if ($tmpStr == $signature) {
 		echo $echostr;
